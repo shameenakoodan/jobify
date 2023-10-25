@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import Job from "../models/JobModel.js";
 let jobs = [
   { id: nanoid(), company: "apple", position: "front end" },
   { id: nanoid(), company: "google", position: "back end" },
