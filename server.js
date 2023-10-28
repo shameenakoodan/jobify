@@ -11,6 +11,8 @@ const app = express();
 //routers
 import jobRouter from './routes/jobRouter.js';
 
+//middleware
+import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 
 //Morgan is used for logging
 if (process.env.NODE_ENV == "development") {
@@ -34,6 +36,7 @@ app.use('*',(req,res)=>{
   res.status(404).json({msg:'not found'})
 })
 
+app.use(errorHandlerMiddleware);
 //Error Message
 app.use((err, req, res, next) => {
   console.log(err);
