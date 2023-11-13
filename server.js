@@ -9,7 +9,7 @@ import "express-async-errors";
 const app = express();
 //routers
 import jobRouter from "./routes/jobRouter.js";
-import { validateTest } from "./middleware/validationMiddleware.js";
+//import { validateTest } from "./middleware/validationMiddleware.js";
 //middleware
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 
@@ -23,14 +23,14 @@ app.get("/", (req, res) => {
   res.send("Hello World!!");
 });
 
-app.post(
+/*app.post(
   "/api/v1/test",
   validateTest,
   (req, res) => {
     const { name } = req.body;
     res.json({ message: `hello ${name}`, data: req.body });
   }
-);
+);*/
 
 app.use("/api/v1/jobs", jobRouter);
 
